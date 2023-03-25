@@ -1,18 +1,14 @@
 # Ty-1-Trainer
 A Trainer for the Game "Ty the Tasmanian Tiger" 1.44
 
+## Movement
 
-![Screenshot_73](https://user-images.githubusercontent.com/118660067/226706851-4d11de4f-4c61-4ad8-a3f5-d07df339e843.png)
+![Screenshot_77](https://user-images.githubusercontent.com/118660067/227712808-edc05368-a107-4e00-ae92-e8471efee51f.png)
 
 ## Teleport
 
-Coming Soon(hopefully :c)
+![Screenshot_78](https://user-images.githubusercontent.com/118660067/227712810-9a9bbed7-d97d-4fc9-926f-f16108788b1f.png)
+added but not finished
 
-## Flying
-
-Working
-(maybe trying to add switches)
-
-## Speed
-Shouldn't be that hard(Flying kinda similar)
-
+## Fun
+need to be added
