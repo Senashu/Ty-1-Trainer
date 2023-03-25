@@ -1,5 +1,6 @@
 # Ty-1-Trainer
-A Trainer for the Game "Ty the Tasmanian Tiger" 1.44
+A Trainer for the Game "Ty the Tasmanian Tiger" Patch 1.44
+Written in Python 3.10
 
 ## Movement
 
@@ -12,3 +13,11 @@ added but not finished
 
 ## Fun
 need to be added
+
+## how to install
+
+To install the packages using the requirements file, open a command prompt or terminal and navigate to the directory where your requirements file is saved. Then, run the following command:
+
+pip install -r requirements.txt
+
+This will install all the required packages listed in the requirements file.
