@@ -35,7 +35,7 @@ class Trainer:
         self.root.geometry('500x500+710+280+0')
         self.root.resizable(False, False)
         self.root.attributes('-alpha', 0.95)
-        self.root.attributes('-topmost', True)
+        self.root.attributes('-topmost', False)
         self.root.overrideredirect(True)
 
         # fonts
