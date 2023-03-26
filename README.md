@@ -1,6 +1,6 @@
 # Ty-1-Trainer
-#A Trainer for the Game "Ty the Tasmanian Tiger" Patch 1.44
-#Written in Python 3.10
+<br>A Trainer for the Game "Ty the Tasmanian Tiger" Patch 1.44 <br />
+Written in Python 3.10
 
 ## Movement
 
