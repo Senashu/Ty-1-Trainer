@@ -1,6 +1,7 @@
 # Ty-1-Trainer
 <br>A Trainer for the Game "Ty the Tasmanian Tiger" Patch 1.44 <br />
-Written in Python 3.10
+<br>Written in Python 3.10<br />
+<br> works better when Ty.exe is on -noidle <br />
 
 ## Movement
 
