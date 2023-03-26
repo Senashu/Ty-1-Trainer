@@ -1,18 +1,26 @@
+import time
+
 import customtkinter as ctk
 import keyboard as kb
 from pymem import *
 from pymem.process import *
-import time
 
 mem = Pymem("Ty.exe")
 module = module_from_name(mem.process_handle, "Ty.exe").lpBaseOfDll
 
-Glide = 0x288964  # 5.5
-GlideSpeed = 0x288928  # 7.0
-RunSpeed = 0x288914  # 10.0
+Glide = 0x288964        # 5.5
+GlideSpeed = 0x288928   # 7.0
+RunSpeed = 0x288914     # 10.0
 JumpHeightG = 0x28893C  # 18.57417488
 JumpHeightW = 0x288998  # 10.67707825
-JumpPeak = 0x2720F4  # I think 1050
+JumpPeak = 0x2720F4     # this is weird IDK
+
+# TyState values 35=standing, 5=running, 6=180 slide, 7=jumping, 8=extended glide, 9=gliding, 47=jump dive, 49=enter dive?,
+# 39=swim, 17=moving while swim(gs), 38=surface, 15=moving on surface, 16=dive, 1=bite, 33=collect animation 0=enter level
+# 32=hit by enemy, 10 = ledgegrab, 46=slippy fall 48=recover from failed bite,31=thing on head,
+
+TyState1 = 0x27158C
+TyState2 = 0x26EE4C
 
 X = 0x270B78
 Y = 0x270B7C
@@ -93,6 +101,9 @@ class Trainer:
         self.switch5 = ctk.CTkCheckBox(self.rightbar, text="JumpPeak (Buggy)",
                                        onvalue=1, offvalue=0, command=self.ToggleJumpPeak)
         self.switch5.pack(side="top", anchor="w", ipady=5, padx=20)
+
+        self.groundswim_btn = ctk.CTkButton(self.rightbar, text="Groundswim", command=self.ToggleTyState)
+        self.groundswim_btn.pack(side="top")
 
         # widgets to Position
 
@@ -218,6 +229,10 @@ class Trainer:
             self.Glide1()
         else:
             self.Glide2()
+
+    def ToggleTyState(self):
+        mem.write_int(module + TyState1, 17)
+        mem.write_int(module + TyState2, 17)
 
     def GlideSpeed(self):
         mem.write_float(module + GlideSpeed, 7.0)
