@@ -3,17 +3,21 @@
 <br>Written in Python 3.10<br />
 <br> works better when Ty.exe is on -noidle <br />
 
+## Rangs
+![Rangs](https://user-images.githubusercontent.com/118660067/234060149-b19242b7-42d6-4779-b21c-4e25c024c904.png)
+
 ## Movement
+![Movement](https://user-images.githubusercontent.com/118660067/234060315-07d34f7d-9959-414f-bcf8-700e9b86adec.png)
 
-![Screenshot_77](https://user-images.githubusercontent.com/118660067/227712808-edc05368-a107-4e00-ae92-e8471efee51f.png)
-
-## Teleport
-
-![Screenshot_78](https://user-images.githubusercontent.com/118660067/227712810-9a9bbed7-d97d-4fc9-926f-f16108788b1f.png)
-added but not finished
+## Position
+![Position](https://user-images.githubusercontent.com/118660067/234060432-7d260cda-915c-4956-9c89-5cdefd97c24d.png)
 
 ## Fun
-need to be added
+![Fun](https://user-images.githubusercontent.com/118660067/234060528-a65cb62d-8b5c-46c8-a692-0d740f19f590.png)
+
+## CheatList
+![CheatList](https://user-images.githubusercontent.com/118660067/234060631-1523c3d8-a7c7-4b9a-a655-444a03260097.png)
+
 
 ## how to install
 
