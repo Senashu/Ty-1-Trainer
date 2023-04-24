@@ -3,6 +3,7 @@ import keyboard
 from TyAttributes import *
 from Movement import *
 from Position import *
+from Fun import *
 
 pm = Pymem("TY.exe")
 
@@ -51,7 +52,7 @@ def handle_key_press(event):
             root.focus_force()
     elif event.name == '2':
         TyStateButton.invoke()
-    elif event.name == '3':
+    elif event.name == '3' and event.event_type == keyboard.KEY_DOWN and keyboard.is_pressed('ctrl'):
         GiveAll_Button.invoke()
     elif event.name == '4' and event.event_type == keyboard.KEY_DOWN and keyboard.is_pressed('ctrl'):
         RemoveAll_Button.invoke()
@@ -92,7 +93,7 @@ def select_frame(frame_num):
             if button in [
                 Glide, GlideUp, GlideSpeedNormal, GlideSpeedFast, RunSpeed, RunSpeedFast, JumpHeightG,
                 JumpHeightGSlider, JumpHeightW, JumpHeightWSlider, SwimSurfaceButton, SwimSurfaceSlider,
-                AirborneSpeedButton, AirborneSpeedSlider, JumpPeakButton, TyStateButton
+                AirborneSpeedButton, AirborneSpeedSlider, JumpPeakButton, TyStateButton,
             ]:
                 button.pack()
             else:
@@ -106,16 +107,14 @@ button2 = ctk.CTkButton(frame_buttons, text_color="Black", text="Movement", font
                         command=lambda: select_frame(1))
 button3 = ctk.CTkButton(frame_buttons, text_color="Black", text="Position", font=TyFontS,
                         command=lambda: select_frame(2))
-button4 = ctk.CTkButton(frame_buttons, text_color="Black", text="TE/Cogs WIP", font=TyFontS,
+button4 = ctk.CTkButton(frame_buttons, text_color="Black", text="FUN", font=TyFontS,
                         command=lambda: select_frame(3))
-button5 = ctk.CTkButton(frame_buttons, text_color="Black", text="FUN", font=TyFontS,
+button5 = ctk.CTkButton(frame_buttons, text_color="Black", text="CheatCodes", font=TyFontS,
                         command=lambda: select_frame(4))
-button6 = ctk.CTkButton(frame_buttons, text_color="Black", text="CheatCodes", font=TyFontS,
-                        command=lambda: select_frame(5))
 
-toggle_button = ctk.CTkButton(frame_buttons, text="Hide Me", command=toggle_window)
-exit_button = ctk.CTkButton(frame_buttons, text="Close", command=quit)
-label_empty = ctk.CTkLabel(frame_buttons, text="\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+toggle_button = ctk.CTkButton(frame_buttons, text="Hide Me", text_color="Black", font=TyFontS, command=toggle_window)
+exit_button = ctk.CTkButton(frame_buttons, text="Close [X]", text_color="Black", font=TyFontS, command=quit)
+label_empty = ctk.CTkLabel(frame_buttons, text="\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
 title_label.pack()
 button1.pack()
@@ -123,7 +122,6 @@ button2.pack()
 button3.pack()
 button4.pack()
 button5.pack()
-button6.pack()
 label_empty.pack()
 toggle_button.pack()
 exit_button.pack(side="bottom", fill="x")
@@ -248,18 +246,18 @@ AirborneSpeedSlider.set(10.0)
 jump_peak_running = False
 # CheatCodes
 
-SelectLevel = ctk.CTkLabel(frame6, font=TyFontS,
+SelectLevel = ctk.CTkLabel(frame5, font=TyFontS,
                            text="-Level Select-\nL R L R ACTION ACTION BITE BITE ACTION BITE BITE ACTION",
                            text_color="black")
 SelectLevel.pack()
-Elemental = ctk.CTkLabel(frame6, font=TyFontS,
+Elemental = ctk.CTkLabel(frame5, font=TyFontS,
                          text="-Elemental Rangs-\nL R L R  ACTION ACTION THROW THROW ACTION THROW",
                          text_color="black")
 Elemental.pack()
-Techno = ctk.CTkLabel(frame6, font=TyFontS, text="-Techno Rangs-\nL R L R ACTION ACTION ACTION THROW ACTION THROW",
+Techno = ctk.CTkLabel(frame5, font=TyFontS, text="-Techno Rangs-\nL R L R ACTION ACTION ACTION THROW ACTION THROW",
                       text_color="black")
 Techno.pack()
-Collect = ctk.CTkLabel(frame6, font=TyFontS,
+Collect = ctk.CTkLabel(frame5, font=TyFontS,
                        text="-Show Collectables-\nL R L R ACTION ACTION BITE THROW THROW BITE LOCKON LOCKON",
                        text_color="black")
 Collect.pack()
@@ -291,14 +289,30 @@ TyStateButton = ctk.CTkButton(frame2, font=TyFontS, width=155, text="Give Ground
 
 # Frame3
 buttons = {
-    "Rainbow Cliffs": ["Spawn Z1", "Hub1", "Hub 2", "Hub 3", "Fence Skip", "Julius", "Gate Skip", "Behind Gate"],
-    "Two Up": ["Spawn A1", "Bilby1", "Two Up Swim", "Spyeggs", "Bite Slide", "Two Up Skip", "Buttons", "2nd Rang",
-               "EndA1", "PortalA1"],
-    "Walk in the Park": ["Spawn A2", "Buzchy Swim", "Walk Skip", "Ken", "Turkey", "EndA2", "PortalA2"],
-    "Ship Rex": ["Spawn A3", "Lost Kids Mission", "Ship Clip", "Nest Swim", "Coconuts", "Bilby Bite", "Spire Gate",
-                 "Spire Swim", "Top Spire"],
-    "Bull's Pen": ["Pillar 1", "Pillar 2", "Pillar 3", "Pillar 4", "Pillar 5"],
-    "Bridge on the River Ty": ["Spawn B1", ],
+    "1. Rainbow Cliffs": ["Spawn Z1", "Hub1", "Hub 2", "Hub 3", "Fence Skip", "Fence Skip Reverse", "Julius",
+                          "Gate Skip", "Behind Gate"],
+    "2. Two Up": ["Spawn A1", "Bilby1", "Two Up Swim", "Spyeggs", "Bite Slide", "Two Up Skip", "Buttons", "2nd Rang",
+                  "EndA1", "PortalA1"],
+    "3. Walk": ["Spawn A2", "Buzchy Swim", "Walk Skip", "Ken", "TurkeyA2", "EndA2", "PortalA2"],
+    "4. Ship Rex": ["Spawn A3", "Lost Kids Mission", "Ship Clip", "Nest Swim", "Coconuts", "Bilby Bite", "Spire Gate",
+                    "Spire Swim", "Top Spire"],
+    "5. Bull's Pen": ["Pillar 1", "Pillar 2", "Pillar 3", "Pillar 4", "Pillar 5"],
+    "6. Bridge": ["Spawn B1", "BridgeSwim", "Flick/Dennis", "Rex Mission", "Neddy", "Turkey",
+                  "Old BridgeSwim", "Old BridgeSwim GS"],
+    "7. Snow Worries": ["Spawn B2", "Kid6", "IceBlock", "Yabby", "LawnSwim", "Icicles", "Mountain", "MillSkip",
+                        "MillFlick"],
+    "8. Outback Safari": ["Empty"],
+    "9. Crikey": ["WIP"],
+    "10. Lyre Lyre": ["WIP", "Option1", "Option2", "Option3", "Option4", "Option5", "Option6", "Option7", "Option8",
+                      "Option9"],
+    "11. Black Stump": ["WIP", "Option1", "Option2", "Option3", "Option4", "Option5", "Option6", "Option7", "Option8",
+                        "Option9"],
+    "12. Rex Marks": ["WIP", "Option1", "Option2", "Option3", "Option4", "Option5", "Option6", "Option7", "Option8",
+                      "Option9"],
+    "13. Fluffy": ["Empty"],
+    "14. Cass Pass": ["Spawn E1", "Pass Jump", "Pass Tree", "Pass Swim", "Portal E1"],
+    "15. Cass Crest": ["Spawn D2", "Start Shadow", "Button1 D2", "Button2 D2", "Button3 D2", "End D2"],
+    "16. Final Battle": ["DoomClip", "Option2", "Option3", "Option4", "Option5"],
 }
 
 
@@ -321,6 +335,8 @@ def optionmenu_callback(choice):
                 command = Hub3
             elif text == "Fence Skip":
                 command = Fence_Skip
+            elif text == "Fence Skip Reverse":
+                command = Reverse_Fence_Skip
             elif text == "Julius":
                 command = Julius
             elif text == "Gate Skip":
@@ -355,8 +371,8 @@ def optionmenu_callback(choice):
                 command = Walk_Skip
             elif text == "Ken":
                 command = Ken
-            elif text == "Turkey":
-                command = Turkey
+            elif text == "TurkeyA2":
+                command = TurkeyA2
             elif text == "EndA2":
                 command = EndA2
             elif text == "PortalA2":
@@ -391,16 +407,131 @@ def optionmenu_callback(choice):
                 command = Pillar5
             elif text == "Spawn B1":
                 command = Bridge_Spawn
-
+            elif text == "BridgeSwim":
+                command = BridgeSwim
+            elif text == "Flick/Dennis":
+                command = Flick_Dennis
+            elif text == "Rex Mission":
+                command = RexMission
+            elif text == "Neddy":
+                command = Neddy
+            elif text == "Turkey":
+                command = Turkey
+            elif text == "Old BridgeSwim":
+                command = Old_BridgeSwim
+            elif text == "Old BridgeSwim GS":
+                command = Old_Swim
+            elif text == "Spawn B2":
+                command = Spawn_B2
+            elif text == "Kid6":
+                command = Kid6
+            elif text == "IceBlock":
+                command = IceBlock
+            elif text == "Yabby":
+                command = Yabby
+            elif text == "LawnSwim":
+                command = LawnSwim
+            elif text == "Icicles":
+                command = Icicles
+            elif text == "Mountain":
+                command = Mountain
+            elif text == "MillSkip":
+                command = MillSkip
+            elif text == "MillFlick":
+                command = MillFlick
+            elif text == "Empty":
+                command = Outback
+            elif text == "WIP":
+                command = WIP
+            elif text == "Spawn E1":
+                command = Spawn_E1
+            elif text == "Pass Jump":
+                command = OOB_Jump
+            elif text == "Pass Tree":
+                command = On_Tree
+            elif text == "Pass Swim":
+                command = Pass_Swim
+            elif text == "Portal E1":
+                command = Portal_E1
+            elif text == "Portal D2":
+                command = Spawn_D2
+            elif text == "Start Shadow":
+                command = EnableBoss
+            elif text == "Button1 D2":
+                command = D2_Button1
+            elif text == "Button2 D2":
+                command = D2_Button2
+            elif text == "Button3 D2":
+                command = D2_Button3
+            elif text == "End D2":
+                command = D2_End
+            elif text == "DoomClip":
+                command = Doom_Clip
             if command:
                 btn = ctk.CTkButton(frame3, text=text, command=command)
                 btn.pack()
 
 
+HealthButton_running = False
+
+
+def repeat_Health():
+    if HealthButton_running:
+        Health()
+        HealthButton.configure(fg_color="green", text="Freeze Health")
+        root.after(100, repeat_Health)
+
+
+def toggle_HealthButton_running():
+    global HealthButton_running
+    HealthButton_running = not HealthButton_running
+    if HealthButton_running:
+        Health()
+        HealthButton.configure(fg_color="green", text="Freeze Health")
+        root.after(100, repeat_Health)
+    else:
+        HealthButton.configure(fg_color="red", text="Freeze Health Disabled")
+
+
+HealthButton = ctk.CTkButton(frame4, font=TyFontS, width=155, fg_color="blue", text="Toggle Health",
+                             text_color="black", command=toggle_HealthButton_running)
+HealthButton.pack()
+
+# Fun
+
+HealthWaterButton_running = False
+
+
+def repeat_HealthWater():
+    if HealthWaterButton_running:
+        HealthWater()
+        HealthWaterButton.configure(fg_color="green", text="Freeze Health Water")
+        root.after(100, repeat_HealthWater)
+
+
+def toggle_HealthWaterButton_running():
+    global HealthWaterButton_running
+    HealthWaterButton_running = not HealthWaterButton_running
+    if HealthWaterButton_running:
+        HealthWater()
+        HealthWaterButton.configure(fg_color="green", text="Freeze Health Water")
+        root.after(100, repeat_HealthWater)
+    else:
+        HealthWaterButton.configure(fg_color="red", text="Freeze Health Water Disabled")
+
+
+HealthWaterButton = ctk.CTkButton(frame4, font=TyFontS, width=155, fg_color="blue", text="Toggle Health Water",
+                                  text_color="black", command=toggle_HealthWaterButton_running)
+HealthWaterButton.pack()
+
+SuperBiteButton = ctk.CTkButton(frame4, font=TyFontS, width=155, text="Give Super Bite", fg_color="green",
+                                text_color="black", command=SuperBite)
+SuperBiteButton.pack()
+
 # Define the options for the combobox
-options = ["Select One", "Rainbow Cliffs", "Two Up", "Walk in the Park", "Ship Rex", "Bull's Pen",
-           "Bridge on the River Ty", "Snow Worries", "Outback Safari", "Crikey", "Lyre Lyre", "Black Stump",
-           "Rex marks", "Fluffy", "Cass Pass", "Cass Crest", "Final Battle"]
+options = ["Select One", "1. Rainbow Cliffs", "2. Two Up", "3. Walk", "4. Ship Rex", "5. Bull's Pen",
+           "6. Bridge", "7. Snow Worries", "8. Outback Safari", "9. Crikey", "10. Lyre Lyre", "11. Black Stump",
+           "12. Rex Marks", "13. Fluffy", "14. Cass Pass", "15. Cass Crest", "16. Final Battle"]
 
 # Create the combobox
 combobox = ctk.CTkOptionMenu(frame3, values=options, command=optionmenu_callback)
