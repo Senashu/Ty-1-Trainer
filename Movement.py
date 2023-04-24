@@ -59,11 +59,6 @@ def JumpPeak1():
     print(Test1)
 
 
-def JumpPeak2():
-    Test2 = mem.write_float(module + JumpPeak, 1050.0)
-    print(Test2)
-
-
 def SwimSurface1():
     mem.write_float(module + SwimSurface, 6.0)
 
@@ -78,3 +73,4 @@ def AirborneSpeed1():
 
 def AirborneSpeed2(value):
     mem.write_float(module + AirborneSpeed, float(value))
+
