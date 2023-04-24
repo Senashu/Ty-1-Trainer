@@ -35,3 +35,8 @@ R = 0x271C20
 L = 0x26FA34
 C1 = 0x27EE10
 C2 = 0x27EE0C
+
+Opal = 0x2888B0
+SuperBite1 = 0x2888B4
+Health1 = 0x2737CC
+HealthWater1 = 0x2737F0
