@@ -57,6 +57,16 @@ def Fence_Skip():
     mem.write_float(module + C2, 0.2109)
 
 
+def Reverse_Fence_Skip():
+    mem.write_float(module + X, 880.91)
+    mem.write_float(module + Y, 2372.05)
+    mem.write_float(module + Z, 12102.76)
+    mem.write_float(module + R, 6.27071)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 1.57054)
+    mem.write_float(module + C2, -1.309)
+
+
 def Julius():
     mem.write_float(module + X, -6273.16)
     mem.write_float(module + Y, 459.32)
@@ -229,7 +239,7 @@ def Ken():
     mem.write_float(module + C2, 0.1329)
 
 
-def Turkey():
+def TurkeyA2():
     mem.write_float(module + X, 1492.81)
     mem.write_float(module + Y, -3356.75)
     mem.write_float(module + Z, -692.25)
@@ -412,6 +422,312 @@ def Pillar5():
 
 
 def Bridge_Spawn():
-    mem.write_float(module + X, -3353.0)
-    mem.write_float(module + Y, 1983.0)
-    mem.write_float(module + Z, 5.0)
+    mem.write_float(module + X, -3242.0)
+    mem.write_float(module + Y, -610.25)
+    mem.write_float(module + Z, 6197.0)
+    mem.write_float(module + R, 1.178)
+    mem.write_int(module + TyState1, 5)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 2.7488)
+    mem.write_float(module + C2, 0.1419)
+
+
+def BridgeSwim():
+    mem.write_float(module + X, 106.19)
+    mem.write_float(module + Y, -912.21)
+    mem.write_float(module + Z, 5601.59)
+    mem.write_float(module + R, 4.60753)
+    mem.write_int(module + TyState1, 17)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 6.17832)
+    mem.write_float(module + C2, 0.10777)
+
+
+def Flick_Dennis():
+    mem.write_float(module + X, -1309.7)
+    mem.write_float(module + Y, 811.11)
+    mem.write_float(module + Z, -5658.0)
+    mem.write_float(module + R, 0.61244)
+    mem.write_int(module + TyState1, 17)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 2.18324)
+    mem.write_float(module + C2, 0.57931)
+
+
+def RexMission():
+    mem.write_float(module + X, 4767.2)
+    mem.write_float(module + Y, -102.39)
+    mem.write_float(module + Z, -3667.72)
+    mem.write_float(module + R, 3.15073)
+    mem.write_int(module + TyState1, 17)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 4.72152)
+    mem.write_float(module + C2, 0.15286)
+
+
+def Neddy():
+    mem.write_float(module + X, 5291.03)
+    mem.write_float(module + Y, 59.18)
+    mem.write_float(module + Z, -161.26)
+    mem.write_float(module + R, 3.02003)
+    mem.write_int(module + TyState1, 5)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 4.69342)
+    mem.write_float(module + C2, -0.16379)
+
+
+def Turkey():
+    mem.write_float(module + X, 8430.67)
+    mem.write_float(module + Y, 97.09)
+    mem.write_float(module + Z, -3758.4)
+    mem.write_float(module + R, 1.58495)
+    mem.write_int(module + TyState1, 5)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 3.16196)
+    mem.write_float(module + C2, 0.00586)
+
+
+def Old_BridgeSwim():
+    mem.write_float(module + X, -6318.7)
+    mem.write_float(module + Y, -764.01)
+    mem.write_float(module + Z, 4604.15)
+    mem.write_float(module + R, 4.48567)
+    mem.write_int(module + TyState1, 5)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 6.05647)
+    mem.write_float(module + C2, 0.14518)
+
+
+def Old_Swim():
+    mem.write_float(module + X, -6318.94)
+    mem.write_float(module + Y, -763.79)
+    mem.write_float(module + Z, 4604.13)
+    mem.write_float(module + R, 4.48315)
+    mem.write_int(module + TyState1, 17)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 6.05395)
+    mem.write_float(module + C2, 0.03766)
+
+
+def Spawn_B2():
+    mem.write_float(module + X, -518.0)
+    mem.write_float(module + Y, -2624.4)
+    mem.write_float(module + Z, 212.0)
+    mem.write_float(module + R, 3.344)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 4.9148)
+    mem.write_float(module + C2, 0.1419)
+
+
+def Yabby():
+    mem.write_float(module + X, 20107.09)
+    mem.write_float(module + Y, -8531.91)
+    mem.write_float(module + Z, -14314.21)
+    mem.write_float(module + R, 1.09624)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 2.57753)
+    mem.write_float(module + C2, 0.22563)
+
+
+def LawnSwim():
+    mem.write_float(module + X, 21679.29)
+    mem.write_float(module + Y, -10209.63)
+    mem.write_float(module + Z, -19789.04)
+    mem.write_float(module + R, 1.68173)
+    mem.write_int(module + TyState1, 17)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 3.25252)
+    mem.write_float(module + C2, -0.07137)
+
+
+def Icicles():
+    mem.write_float(module + X, 43124.38)
+    mem.write_float(module + Y, -2723.73)
+    mem.write_float(module + Z, -20936.08)
+    mem.write_float(module + R, 0.58667)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 2.12447)
+    mem.write_float(module + C2, 0.16289)
+
+
+def Mountain():
+    mem.write_float(module + X, 43642.73)
+    mem.write_float(module + Y, -2700.32)
+    mem.write_float(module + Z, -16108.59)
+    mem.write_float(module + R, 3.98017)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 5.56665)
+    mem.write_float(module + C2, 0.31289)
+
+
+def MillSkip():
+    mem.write_float(module + X, 40646.48)
+    mem.write_float(module + Y, -543.4)
+    mem.write_float(module + Z, -215.04)
+    mem.write_float(module + R, 3.71202)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 5.32332)
+    mem.write_float(module + C2, 0.1449)
+
+
+def MillFlick():
+    mem.write_float(module + X, 40594.39)
+    mem.write_float(module + Y, 399.33)
+    mem.write_float(module + Z, 1031.61)
+    mem.write_float(module + R, 3.7305)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 5.3275)
+    mem.write_float(module + C2, 0.1239)
+
+
+def IceBlock():
+    mem.write_float(module + X, 1304.9)
+    mem.write_float(module + Y, -5124.65)
+    mem.write_float(module + Z, -12253.62)
+    mem.write_float(module + R, 4.77467)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 0.067)
+    mem.write_float(module + C2, 0.2109)
+
+
+def Kid6():
+    mem.write_float(module + X, 7568.02)
+    mem.write_float(module + Y, -4475.24)
+    mem.write_float(module + Z, -5778.75)
+    mem.write_float(module + R, 5.67289)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 1.17413)
+    mem.write_float(module + C2, 0.3129)
+
+
+def Outback():
+    print("Sheesh")
+
+
+def WIP():
+    print("Sheesh")
+
+
+def Spawn_E1():
+    mem.write_float(module + X, -8845.0)
+    mem.write_float(module + Y, 1700.07)
+    mem.write_float(module + Z, 17487.0)
+    mem.write_float(module + R, 2.01)
+    mem.write_int(module + TyState1, 5)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 3.5808)
+    mem.write_float(module + C2, 0.1419)
+
+
+def OOB_Jump():
+    mem.write_float(module + X, -5386.87)
+    mem.write_float(module + Y, 2443.71)
+    mem.write_float(module + Z, 15793.93)
+    mem.write_float(module + R, 2.22649)
+    mem.write_int(module + TyState1, 5)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 3.8298)
+    mem.write_float(module + C2, 0.0339)
+
+
+def On_Tree():
+    mem.write_float(module + X, -4692.28)
+    mem.write_float(module + Y, 3107.32)
+    mem.write_float(module + Z, 15984.82)
+    mem.write_float(module + R, 6.24154)
+    mem.write_int(module + TyState1, 5)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 1.52915)
+    mem.write_float(module + C2, 0.1419)
+
+
+def Pass_Swim():
+    mem.write_float(module + X, -4693.26)
+    mem.write_float(module + Y, -1858.49)
+    mem.write_float(module + Z, 12779.31)
+    mem.write_float(module + R, 0.48087)
+    mem.write_int(module + TyState1, 17)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 2.05166)
+    mem.write_float(module + C2, -0.07071)
+
+
+def Portal_E1():
+    mem.write_float(module + X, -10188.06)
+    mem.write_float(module + Y, -1638.86)
+    mem.write_float(module + Z, -6791.36)
+    mem.write_float(module + R, 5.48193)
+    mem.write_int(module + TyState1, 17)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 1.25571)
+    mem.write_float(module + C2, -0.63013)
+
+
+def Spawn_D2():
+    mem.write_float(module + X, -6306.0)
+    mem.write_float(module + Y, -860.18)
+    mem.write_float(module + Z, -7322.0)
+    mem.write_float(module + R, 1.169)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 2.7398)
+    mem.write_float(module + C2, 0.13924)
+
+
+def EnableBoss():
+    mem.write_float(module + X, -4207.16)
+    mem.write_float(module + Y, -1354.65)
+    mem.write_float(module + Z, -5649.22)
+    mem.write_float(module + R, 2.82692)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 4.38079)
+    mem.write_float(module + C2, 0.27424)
+
+
+def D2_Button1():
+    mem.write_float(module + X, -2282.98)
+    mem.write_float(module + Y, -1354.65)
+    mem.write_float(module + Z, -2486.75)
+    mem.write_float(module + R, 1.88734)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 3.45813)
+    mem.write_float(module + C2, 0.25275)
+
+
+def D2_Button2():
+    mem.write_float(module + X, -2846.48)
+    mem.write_float(module + Y, 42.39)
+    mem.write_float(module + Z, -12693.28)
+    mem.write_float(module + R, 6.01882)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 1.32805)
+    mem.write_float(module + C2, -0.24155)
+
+
+def D2_Button3():
+    mem.write_float(module + X, 4913.24)
+    mem.write_float(module + Y, 1464.94)
+    mem.write_float(module + Z, -6769.71)
+    mem.write_float(module + R, 4.95575)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 0.22536)
+    mem.write_float(module + C2, -0.48805)
+
+
+def D2_End():
+    mem.write_float(module + X, 8037.1)
+    mem.write_float(module + Y, 2640.26)
+    mem.write_float(module + Z, -5968.18)
+    mem.write_float(module + R, 0.51431)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 2.0614)
+    mem.write_float(module + C2, 0.3399)
+
+
+def Doom_Clip():
+    mem.write_float(module + X, -1408.73)
+    mem.write_float(module + Y, -235.39)
+    mem.write_float(module + Z, -229.49)
+    mem.write_float(module + R, 3.4473)
+    time.sleep(0.3)
+    mem.write_float(module + C1, 5.0268)
+    mem.write_float(module + C2, 1.309)
