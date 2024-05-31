@@ -23,7 +23,7 @@ Press "1" to open and close it.
 
 ## how to install
 
-You need Python ![Download Pyhton](https://www.python.org/downloads/)
+You need Python [Download Pyhton](https://www.python.org/downloads/)
 
 (MAKE SURE YOU HAVE PIP INSTALLED)
 To install the packages using the requirements file, open a command prompt or terminal and navigate to the directory where your requirements file is saved. Then, run the following command:
